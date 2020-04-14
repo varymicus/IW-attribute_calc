@@ -1,13 +1,12 @@
 import math
 
+# Inputs
 inputs = []
 with open('inputs.txt') as f:
     for line in f:
+#        print(line, end='')
         inputs.append(line[line.find(":")+2:-1])
 
-print(inputs)
-
-# INPUTS
 attribute_cap = int(inputs[0]) #200
 free_points = int(inputs[1]) #1000
 myst_power = float(inputs[2]) #0.04
@@ -32,21 +31,31 @@ pet_level = int(inputs[20]) #225
 pet_time = float(inputs[21]) #5E4
 
 
-# Scaling Power Values
-myst_scale = 1.00
-profit_scale = 1.00
-shard_scale = 1.35
-pet_ap_scale = 1.28
-char_ap_scale = 1.00
-cap_growth_scale = 1.7
-idle_scale = 1.00
-vp_scale = 1.00
-ve_scale = 1.00
-autoclick_scale = 0.00
-evo_scale = 1.00
-inc_scale = 6.6
-crit_scale = 0
+# Class Scalings
+scalings = []
+with open(inputs[22] + '.txt') as f:
+    for line in f:
+#        print(line, end='')
+        scalings.append(line[line.find(":")+2:-1])
 
+char_ap_scale = float(scalings[0]) #1.00
+pet_ap_scale = float(scalings[1]) #1.28
+vp_scale = float(scalings[2]) #1.00
+ve_scale = float(scalings[3]) #1.00
+inc_scale = float(scalings[4]) #6.6
+sum_scale = float(scalings[5]) #0
+evo_scale = float(scalings[6]) #1.00
+autoclick_scale = float(scalings[7]) #0.00
+crit_scale = float(scalings[8]) #0
+offline_scale = float(scalings[9]) #0
+idle_scale = float(scalings[10]) #1.00
+profit_scale = float(scalings[11]) #1.00
+myst_scale = float(scalings[12]) #1.00
+shard_scale = float(scalings[13]) #1.35
+level_scale = float(scalings[14]) #3
+cap_growth_scale = float(scalings[15]) #1.7
+
+# Attribute Scalings
 i_scale = 1.02 ** myst_scale
 n_scale = 1.022 ** ve_scale
 s_scale = 1.03 ** evo_scale
@@ -58,12 +67,52 @@ e_scale = 1.018 ** pet_ap_scale
 
 debug = 0
 
-def optimize(i_min, i_add, n_min, n_add, s_min, s_add, w_min, w_add, d_min, d_add, p_min, p_add, m_min, m_add, e_min, e_add):
+# Gear Values
+i_min = 0
+n_min = 0
+s_min = 0
+w_min = 0
+d_min = 0
+p_min = 0
+m_min = 0
+e_min = 0
+i_add = 0
+n_add = 0
+s_add = 0
+w_add = 0
+d_add = 0
+p_add = 0
+m_add = 0
+e_add = 0
+
+gear = []
+with open('gear.txt') as f:
+    for line in f:
+#        print(line, end='')
+        gear.append(line[line.find(":")+2:-1])
+
+i_min = int(gear[0])
+n_min = int(gear[1])
+s_min = int(gear[2])
+w_min = int(gear[3])
+d_min = int(gear[4])
+p_min = int(gear[5])
+m_min = int(gear[6])
+e_min = int(gear[7])
+i_add = int(gear[8])
+n_add = int(gear[9])
+s_add = int(gear[10])
+w_add = int(gear[11])
+d_add = int(gear[12])
+p_add = int(gear[13])
+m_add = int(gear[14])
+e_add = int(gear[15])
+
+def optimize():
 
     multiplier = 1.00
     ptsSpent = 0
     spread = [i_min + i_add, n_min + n_add, s_min + s_add, w_min + w_add, d_min + d_add, p_min + p_add, m_min + m_add, e_min + e_add]
-    print(spread)
 
     for i in range (i_min + i_add, attribute_cap + 1, 25):
         ptsSpent = i - i_add
@@ -101,7 +150,15 @@ def optimize(i_min, i_add, n_min, n_add, s_min, s_add, w_min, w_add, d_min, d_ad
                                                                     if temp > multiplier:
                                                                         multiplier = temp
                                                                         spread = [i,n,s,w,d,p,m,e]
-    print("{:.2e}, {:.2e}, {:.2e}, {:.2e}, {:.2e}, {:.2e}".format(calc_i_mult(spread[0]), calc_n_mult(spread[1]), calc_s_mult(spread[2]), calc_w_mult(spread[3]), calc_d_mult(spread[4]), calc_p_mult(spread[5])))
+    print("Intelligence: {:}".format(spread[0]))
+    print("Insight: {:}".format(spread[1]))
+    print("Spellcraft: {:}".format(spread[2]))
+    print("Wisdom: {:}".format(spread[3]))
+    print("Dominance: {:}".format(spread[4]))
+    print("Patience: {:}".format(spread[5]))
+    print("Mastery: {:}".format(spread[6]))
+    print("Empathy: {:}".format(spread[7]))
+
     return spread
 
 def calc_i_mult(i):
@@ -184,4 +241,4 @@ def calc_e_mult(e):
     if e >= 250: mult *= (1 + 0.025 * pet_level) ** profit_scale
     return mult
 
-print((optimize(150, 0, 50, 40, 150, 0, 0, 0, 0, 0, 100, 0, 50, 0, 0, 75,)))
+optimize()

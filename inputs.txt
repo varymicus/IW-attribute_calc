@@ -20,3 +20,4 @@ Green Catalyst Power: 1.025
 Hero Level: 175
 Pet Level: 225
 Pet Time: 5E4
+Class Scaling: Archon + SS (Total)

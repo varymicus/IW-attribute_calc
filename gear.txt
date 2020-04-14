@@ -1,0 +1,16 @@
+Minimum Intelligence: 150
+Minimum Insight: 50
+Minimum Spellcraft: 150
+Minimum Wisdom: 0
+Minimum Dominance: 0
+Minimum Patience: 100
+Minimum Mastery: 50
+Minimum Empathy: 0
+Bonus Intelligence: 0
+Bonus Insight: 40
+Bonus Spellcraft: 0
+Bonus Wisdom: 0
+Bonus Dominance: 0
+Bonus Patience: 0
+Bonus Mastery: 0
+Bonus Empathy: 75

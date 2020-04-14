@@ -1,0 +1,16 @@
+Character Ability Power: 1
+Pet Ability Power: 1.28
+Void Mana Profit: 1
+Void Mana per Entity: 1
+Incantation: 6.6
+Summoning: 0
+Evocation: 1
+Autoclick: 0
+Critical Click: 0
+Offline: 0
+Idle: 1
+Profit: 1
+Mysteries Power: 1
+Shards per Second: 1
+Hero Level: 3
+CAP Growth: 1.7
