@@ -1,0 +1,22 @@
+Attribute Cap: 225
+Attribute Points to Allocate: 1010
+Base Mysteries Power: 0.04
+Base Void Man Profit: 0.16
+Achievements: 782
+Achievement Points: 14790
+Upgrades: 1209
+Void Entities Collected: 2E4
+Void Entity Lifetime (use Void Lure/Prison): 5.19E7
+Void Entity Spawnrate (use Void Lure/Prison): 4.84E6
+Spells Cast: 1E10
+Accumulated and Persistent Spells Cast This Exile: 1E6
+Spell Shards Collected: 1E17
+Evocations Cast: 1E9
+Spell Shards per Second (use Syphon Power): 2E24
+Autoclicks: 1E6
+Total Mana Sources: 86400
+Idle Time: 5E4
+Green Catalyst Power: 1.025
+Hero Level: 175
+Pet Level: 225
+Pet Time: 5E4

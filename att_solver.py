@@ -1,28 +1,36 @@
 import math
 
+inputs = []
+with open('inputs.txt') as f:
+    for line in f:
+        inputs.append(line[line.find(":")+2:-1])
+
+print(inputs)
+
 # INPUTS
-attribute_cap = 225
-free_points = 1010
-myst_power = 0.04
-void_profit = 0.16
-achievements = 782
-achievement_points = 14790
-upgrades = 1209
-ve_collected = 2E4
-ve_lifetime = 5.19E7
-ve_spawnrate = 4.84E6
-spells_cast = 1E10
-accumulated_casts = 1E6
-shards_collected = 1E17
-evocation_casts = 1E9
-shards_per_sec = 2E24
-autoclicks = 1E6
-sources = 86400
-idle_time = 5E4
-green_catalyst_power = 1.025
-hero_level = 175
-pet_level = 225
-pet_time = 5E4
+attribute_cap = int(inputs[0]) #200
+free_points = int(inputs[1]) #1000
+myst_power = float(inputs[2]) #0.04
+void_profit = float(inputs[3]) #0.16
+achievements = int(inputs[4]) #782
+achievement_points = int(inputs[5]) #14790
+upgrades = int(inputs[6]) #1209
+ve_collected = float(inputs[7]) #2E4
+ve_lifetime = float(inputs[8]) #5.19E7
+ve_spawnrate = float(inputs[9]) #4.84E6
+spells_cast = float(inputs[10]) #1E10
+accumulated_casts = float(inputs[11]) #1E6
+shards_collected = float(inputs[12]) #1E17
+evocation_casts = float(inputs[13]) #1E9
+shards_per_sec = float(inputs[14]) #2E24
+autoclicks = float(inputs[15]) #1E6
+sources = int(inputs[16]) #86400
+idle_time = float(inputs[17]) #5E4
+green_catalyst_power = float(inputs[18]) #1.025
+hero_level = int(inputs[19]) #175
+pet_level = int(inputs[20]) #225
+pet_time = float(inputs[21]) #5E4
+
 
 # Scaling Power Values
 myst_scale = 1.00
